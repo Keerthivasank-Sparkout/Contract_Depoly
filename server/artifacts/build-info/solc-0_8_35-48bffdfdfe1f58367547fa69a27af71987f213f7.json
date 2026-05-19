@@ -1,0 +1,41 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_35-48bffdfdfe1f58367547fa69a27af71987f213f7",
+  "solcVersion": "0.8.35",
+  "solcLongVersion": "0.8.35+commit.47b9dedd",
+  "compilerType": "solc",
+  "userSourceNameMap": {
+    "contracts/Contacts.sol": "project/contracts/Contacts.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode.linkReferences",
+            "evm.bytecode.object",
+            "evm.bytecode.opcodes",
+            "evm.bytecode.sourceMap",
+            "evm.deployedBytecode.immutableReferences",
+            "evm.deployedBytecode.linkReferences",
+            "evm.deployedBytecode.object",
+            "evm.deployedBytecode.opcodes",
+            "evm.deployedBytecode.sourceMap",
+            "evm.methodIdentifiers"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/Contacts.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.35;\n\ncontract MyContact{\n    string private name;\n    string private mobile;\n\n    event NAME_CHANGED(string oldName, string newName);\n    event USER_DETAILS_CHANGED(string oldName, string oldMobile, string newName, string newMobile);\n\n    constructor(string memory _name, string memory _mobile) {\n        name = _name;\n        mobile = _mobile;\n    }\n\n    function setName(string memory _name) public {\n        string memory oldName = name;\n        name = _name;\n        emit NAME_CHANGED(oldName, _name);\n    }\n\n    function setUserDetails(string memory _name, string memory _mobile) public {\n        string memory oldName = name;\n        string memory oldMobile = mobile;\n        name = _name;\n        mobile = _mobile;\n        emit USER_DETAILS_CHANGED(oldName, oldMobile, _name, _mobile);\n    }\n    \n    function getName() public view returns (string memory) {\n        return name;\n    }\n\n    function getMobile() public view returns (string memory) {\n        return mobile;\n    }\n\n    function getUserDetails() public view returns (string memory, string memory) {\n        return (name, mobile);\n    }\n}\n"
+      }
+    }
+  }
+}

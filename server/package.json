@@ -1,0 +1,37 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app/index.js",
+    "build": "hardhat build",
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy-contact.js --network hoodi",
+    "deploy:sepolia": "hardhat run scripts/deploy-contact.js --network sepolia",
+    "deploy:hoodi": "hardhat run scripts/deploy-contact.js --network hoodi",
+    "deploy:script": "hardhat run scripts/deploy-contact.js --network hoodi",
+    "deploy:contact": "hardhat run scripts/deploy-contact.js --network hoodi",
+    "deploy:script:sepolia": "hardhat run scripts/deploy-contact.js --network sepolia",
+    "deploy:script:hoodi": "hardhat run scripts/deploy-contact.js --network hoodi",
+    "verify:hoodi": "hardhat verify 0xff82fd3dfbb9b95a8062ee1017efc8905a349fe9 --network hoodi",
+    "verify:sepolia": "hardhat verify --network sepolia"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.6.1",
+    "dotenv": "^17.4.2",
+    "ethers": "^6.16.0",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox-viem": "^5.0.5",
+    "@types/node": "^25.7.0",
+    "hardhat": "^3.4.5",
+    "typescript": "^6.0.3"
+  }
+}

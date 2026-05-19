@@ -1,0 +1,361 @@
+:root {
+  color: #182230;
+  background: #f5f7fb;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.page-shell {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 24px;
+  background:
+    linear-gradient(135deg, rgba(24, 34, 48, 0.08), transparent 40%),
+    linear-gradient(315deg, rgba(13, 148, 136, 0.12), transparent 35%),
+    #f5f7fb;
+}
+
+.form-panel {
+  width: min(100%, 430px);
+  padding: 28px;
+  border: 1px solid #d9e1ec;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 18px 50px rgba(24, 34, 48, 0.12);
+}
+
+.wallet-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.connect-button,
+.save-button,
+.details-button,
+.wallet-option,
+.disconnect-button,
+.close-button {
+  border: 0;
+  cursor: pointer;
+}
+
+.connect-button {
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #182230;
+  font-weight: 700;
+}
+
+.heading-block {
+  margin-bottom: 26px;
+}
+
+.heading-block p {
+  margin: 0 0 8px;
+  color: #0f766e;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.heading-block h1 {
+  margin: 0;
+  font-size: clamp(2rem, 8vw, 2.7rem);
+  line-height: 1;
+}
+
+.user-form {
+  display: grid;
+  gap: 18px;
+}
+
+.user-form label {
+  display: grid;
+  gap: 8px;
+  color: #344054;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.user-form input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: #182230;
+  background: #ffffff;
+  outline: none;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.user-form input:focus {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12);
+}
+
+.form-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.save-button,
+.details-button {
+  min-height: 50px;
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+.save-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #ffffff;
+  background: #0f766e;
+}
+
+.save-button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.details-button {
+  color: #182230;
+  background: #d9e1ec;
+}
+
+.details-button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.success-message,
+.error-message,
+.details-message {
+  margin: 18px 0 0;
+  font-weight: 700;
+}
+
+.success-message {
+  color: #0f766e;
+}
+
+.error-message {
+  color: #b42318;
+}
+
+.details-message {
+  color: #344054;
+}
+
+.button-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #ffffff;
+  border-radius: 999px;
+  animation: spin 800ms linear infinite;
+}
+
+.transaction-box {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid #b7dfd8;
+  border-radius: 8px;
+  background: #f0fdfa;
+}
+
+.transaction-box span {
+  color: #0f766e;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.transaction-box p {
+  max-width: 100%;
+  margin: 0;
+  color: #182230;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.58);
+}
+
+.wallet-modal {
+  position: relative;
+  width: min(100%, 390px);
+  padding: 28px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.22);
+}
+
+.close-button {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 8px;
+  color: #475467;
+  background: #eef2f7;
+  font-weight: 800;
+}
+
+.wallet-modal h2 {
+  margin: 0 36px 10px 0;
+  font-size: 1.45rem;
+}
+
+.modal-copy {
+  margin: 0 0 20px;
+  color: #667085;
+  line-height: 1.5;
+}
+
+.wallet-option {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid #d9e1ec;
+  border-radius: 8px;
+  color: #182230;
+  background: #ffffff;
+  text-align: left;
+}
+
+.wallet-option:hover,
+.disconnect-button:hover,
+.details-button:hover,
+.connect-button:hover,
+.save-button:hover {
+  filter: brightness(0.96);
+}
+
+.wallet-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #f97316;
+  font-weight: 900;
+}
+
+.wallet-option strong,
+.wallet-option small {
+  display: block;
+}
+
+.wallet-option small {
+  margin-top: 3px;
+  color: #667085;
+}
+
+.connected-wallet {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid #d9e1ec;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.connected-wallet span {
+  color: #667085;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.connected-wallet strong {
+  color: #182230;
+  font-size: 1.15rem;
+}
+
+.disconnect-button {
+  min-height: 44px;
+  margin-top: 6px;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #b42318;
+  font-weight: 800;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .page-shell {
+    padding: 16px;
+  }
+
+  .form-panel,
+  .wallet-modal {
+    padding: 22px;
+  }
+
+  .wallet-row {
+    justify-content: stretch;
+  }
+
+  .connect-button {
+    width: 100%;
+  }
+
+  .form-actions {
+    grid-template-columns: 1fr;
+  }
+}
