@@ -3,10 +3,7 @@ services:
     build: ./server
     container_name: backend
     restart: always
-
-    env_file:
-      - ./server/.env
-
+    
     ports:
       - "3000:3000"
 
