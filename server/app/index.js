@@ -23,7 +23,7 @@ const {
   HOODI_PRIVATE_KEY,
   CONTRACT_ADDRESS,
 } = process.env;
-
+console.log(CLIENT_URL)
 // Validate required environment variables
 if (!HOODI_RPC_URL || !HOODI_PRIVATE_KEY || !CONTRACT_ADDRESS) {
   console.error("Missing required environment variables");

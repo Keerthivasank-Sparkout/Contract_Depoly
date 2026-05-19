@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node app/index.js",
+    "start": "nodemon app/index.js",
     "build": "hardhat build",
     "compile": "hardhat compile",
     "test": "hardhat test",
@@ -17,7 +17,10 @@
     "deploy:script:sepolia": "hardhat run scripts/deploy-contact.js --network sepolia",
     "deploy:script:hoodi": "hardhat run scripts/deploy-contact.js --network hoodi",
     "verify:hoodi": "hardhat verify 0xff82fd3dfbb9b95a8062ee1017efc8905a349fe9 --network hoodi",
-    "verify:sepolia": "hardhat verify --network sepolia"
+    "verify:sepolia": "hardhat verify --network sepolia",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
@@ -25,8 +28,11 @@
   "dependencies": {
     "@openzeppelin/contracts": "^5.6.1",
     "dotenv": "^17.4.2",
+    "eslint": "^10.4.0",
     "ethers": "^6.16.0",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14",
+    "prettier": "^3.8.3"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox-viem": "^5.0.5",
