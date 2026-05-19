@@ -1,4 +1,4 @@
-const { Wallet } = require("ethers");
+import { Wallet } from "ethers";
 
 async function createWallet() {
 
