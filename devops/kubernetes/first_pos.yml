@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-project
+  labels:
+    project: demo
+spec:
+  containers:
+    - name: my-project-demo-kubernets
+      image: nginx
+      ports:
+        - containerPort: 5000

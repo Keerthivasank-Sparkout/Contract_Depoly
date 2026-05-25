@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-project-replica-demo
+  labels:
+    project: my-project-replica-demo
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      project: my-project-replica
+  template:
+    metadata:
+      name: my-project
+      labels:
+        project: my-project-replica
+    spec:
+      containers:
+        - name: my-project-demo-kubernets
+          image: nginx
+          ports:
+            - containerPort: 5000
